@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatTraffic.SystemViewer.ExternalDataTcpListener.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener
     {
         static void Main(string[] args)
         {
+            TcpAsyncListener.StartServer();
+            Console.ReadKey();
         }
     }
 }

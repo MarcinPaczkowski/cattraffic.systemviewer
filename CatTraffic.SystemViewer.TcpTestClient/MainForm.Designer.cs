@@ -82,6 +82,7 @@
             this.uxTest.TabIndex = 4;
             this.uxTest.Text = "Testuj";
             this.uxTest.UseVisualStyleBackColor = true;
+            this.uxTest.Click += new System.EventHandler(this.uxTest_Click);
             // 
             // MainForm
             // 
