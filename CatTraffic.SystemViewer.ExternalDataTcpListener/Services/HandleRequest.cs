@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using CatTraffic.SystemViewer.ExternalDataTcpListener.Models;
+using CatTraffic.SystemViewer.ExternalDataTcpListener.Repositories;
 
 namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
 {
@@ -11,6 +13,8 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
     {
         TcpClient _clientConnection;
         NetworkStream _networkStream = null;
+        FrameSplitter _splitter = new FrameSplitter();
+        DataRepository _dataRepository = new DataRepository();
 
         public HandleRequest(TcpClient clientConnection)
         {
@@ -42,20 +46,20 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
                     return;
                 }
 
-                byte[] buffer = result.AsyncState as byte[];
-                Console.WriteLine("czytam");
-                //string data = Encoding.Default.GetString(buffer, 0, read);
-
-                //do the job with the data here
-                //send the data back to client.
-                //Byte[] sendBytes = Encoding.ASCII.GetBytes("Processed " + data);
-                //networkStream.Write(sendBytes, 0, sendBytes.Length);
-                //networkStream.Flush();
+                var buffer = result.AsyncState as byte[];
+                var data = _splitter.SplitAndProcess(buffer);
+                SaveData(data);
             }
             catch (Exception ex)
             {
                 throw;
             }
+        }
+
+        private void SaveData(SplittedData data)
+        {
+            data.TriggerData.ForEach(t => _dataRepository.SaveTriggerData(t));
+            data.WeightData.ForEach(w => _dataRepository.SaveWeigthData(w));
         }
     }
 }

@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\TriggerDataFactory.cs" />
+    <Compile Include="Factories\WeightDataFactory.cs" />
+    <Compile Include="Models\SplittedData.cs" />
+    <Compile Include="Models\TriggerData.cs" />
+    <Compile Include="Models\WeightData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -50,6 +55,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\DataRepository.cs" />
+    <Compile Include="Services\FrameSplitter.cs" />
     <Compile Include="Services\HandleRequest.cs" />
     <Compile Include="Services\TcpAsyncListener.cs" />
   </ItemGroup>
@@ -60,10 +67,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
