@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CatTraffic.SystemViewer.DataProcessor.Services;
 
 namespace CatTraffic.SystemViewer.DataProcessor
 {
     class Program
     {
-        static void Main(string[] args)
+        private static MainService _mainService;
+
+        static void Main()
         {
+            _mainService = new MainService();
+            _mainService.Start();
         }
     }
 }
