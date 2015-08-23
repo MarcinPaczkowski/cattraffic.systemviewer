@@ -9,7 +9,7 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Models
     public class WeightData
     {
         public int Id { get; set; }
-        public DateTime WieghtDate { get; set; }
+        public DateTime WeightDate { get; set; }
         public int Lane { get; set; }
         public int Direction { get; set; }
         public int VehicleType { get; set; }
