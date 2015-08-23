@@ -1,6 +1,6 @@
-﻿using CatTraffic.SystemViewer.Common.Models;
+﻿using CatTraffic.SystemViewer.DataProcessor.Models;
 
-namespace CatTraffic.SystemViewer.Common.Repositories
+namespace CatTraffic.SystemViewer.DataProcessor.Repositories
 {
     public class ExternalDataRepository
     {

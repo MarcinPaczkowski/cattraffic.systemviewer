@@ -1,4 +1,5 @@
-﻿using CatTraffic.SystemViewer.Common.Repositories;
+﻿using CatTraffic.SystemViewer.Common.Helpers;
+using CatTraffic.SystemViewer.Common.Repositories;
 
 namespace CatTraffic.SystemViewer.DataProcessor.Services
 {
@@ -13,8 +14,9 @@ namespace CatTraffic.SystemViewer.DataProcessor.Services
 
         internal void Start()
         {
-            while (true)
-                ProcessFirstExternalData();
+            var value = ByteHelper.CreateIntFromBytes(1, 1);
+            //while (true)
+            //    ProcessFirstExternalData();
         }
 
         private void ProcessFirstExternalData()

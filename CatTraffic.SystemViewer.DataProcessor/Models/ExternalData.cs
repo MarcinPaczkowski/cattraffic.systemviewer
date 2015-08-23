@@ -1,11 +1,12 @@
 ﻿using System;
 
-namespace CatTraffic.SystemViewer.Common.Models
+namespace CatTraffic.SystemViewer.DataProcessor.Models
 {
     public class ExternalData
     {
         public int Id { get; set; }
         public int TiggerId { get; set; }
+        public DateTime TriggerTime { get; set; }
 
         public int SiteId { get; set; }
         public DateTime DateTime { get; set; }

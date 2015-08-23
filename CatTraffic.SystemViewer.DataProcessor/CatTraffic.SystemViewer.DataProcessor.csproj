@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CatTraffic.SystemViewer.Common\CatTraffic.SystemViewer.Common.csproj">
+      <Project>{a7b3229c-c285-4647-aa15-4c7dc6996fad}</Project>
+      <Name>CatTraffic.SystemViewer.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CatTraffic.SystemViewer.Log4Net\CatTraffic.SystemViewer.Log4Net.csproj">
       <Project>{c5107252-9baa-4ec3-8404-38895658ad13}</Project>
       <Name>CatTraffic.SystemViewer.Log4Net</Name>
