@@ -1,25 +1,25 @@
-﻿using CatTraffic.SystemViewer.DataProcessor.Repositories;
+﻿using CatTraffic.SystemViewer.Common.Helpers;
+using CatTraffic.SystemViewer.Common.Interfaces;
 
 namespace CatTraffic.SystemViewer.DataProcessor.Services
 {
-    internal class MainService
+    public class MainService : ICameraService
     {
-        private readonly ExternalDataRepository _externalDataRepository;
+        private readonly ExternalDataService _externalDataService;
 
         public MainService()
         {
-            _externalDataRepository = new ExternalDataRepository();
+            _externalDataService = new ExternalDataService();
         }
 
-        internal void Start()
+        public void Start()
         {
+            ConnectionStringHelper.SetConnectionString("CatTrafficConnection");
+
             while (true)
-                ProcessFirstExternalData();
-        }
-
-        private void ProcessFirstExternalData()
-        {
-            var firstExternalData = _externalDataRepository.GetFirstUnprocessedData();
+            {
+                _externalDataService.ProcessFirstUnprocessedData();
+            }
         }
     }
 }

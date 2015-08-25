@@ -7,13 +7,13 @@ namespace CatTraffic.SystemViewer.DataProcessor.Services
 {
     public class AnprService
     {
-        public AnprInfo GetInfoFromPhoto(AnprInfo anprInfo, string pathToPhoto)
+        public ExternalData GetInfoFromPhoto(ExternalData anprInfo, string pathToPhoto)
         {
             anprInfo = ProcessPhoto(anprInfo, pathToPhoto);
             return anprInfo;
         }
 
-        private static AnprInfo ProcessPhoto(AnprInfo anprInfo, string path)
+        private static ExternalData ProcessPhoto(ExternalData anprInfo, string path)
         {
             var anpr = new cmAnpr("default");
             var image = new gxImage("default");

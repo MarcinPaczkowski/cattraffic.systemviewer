@@ -1,4 +1,5 @@
-﻿using CatTraffic.SystemViewer.DataProcessor.Services;
+﻿using System;
+using CatTraffic.SystemViewer.DataProcessor.Services;
 
 namespace CatTraffic.SystemViewer.DataProcessor
 {
@@ -8,8 +9,15 @@ namespace CatTraffic.SystemViewer.DataProcessor
 
         static void Main()
         {
-            _mainService = new MainService();
-            _mainService.Start();
+            try
+            {
+                _mainService = new MainService();
+                _mainService.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Krytyczny błąd programu - {0}", ex.Message);
+            }
         }
     }
 }
