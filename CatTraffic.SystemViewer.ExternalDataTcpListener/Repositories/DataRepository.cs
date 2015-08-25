@@ -9,12 +9,12 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Repositories
 {
     internal class DataRepository
     {
-        internal void SaveTriggerData(TriggerData t)
+        internal void SaveTriggerData(TriggerData data)
         {
             throw new NotImplementedException();
         }
 
-        internal void SaveWeigthData(WeightData w)
+        internal void SaveWeigthData(WeightData data)
         {
             throw new NotImplementedException();
         }

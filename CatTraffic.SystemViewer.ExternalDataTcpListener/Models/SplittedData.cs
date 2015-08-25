@@ -10,5 +10,10 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Models
     {
         public List<TriggerData> TriggerData { get; set; }
         public List<WeightData> WeightData { get; set; }
+        public SplittedData()
+        {
+            TriggerData = new List<TriggerData>();
+            WeightData = new List<WeightData>();
+        }
     }
 }
