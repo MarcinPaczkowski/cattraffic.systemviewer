@@ -41,6 +41,7 @@
       <HintPath>..\references\gxdotnet8.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,9 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\NotFoundPhotoException.cs" />
-    <Compile Include="Models\AnprInfo.cs" />
-    <Compile Include="Models\Axle.cs" />
+    <Compile Include="Exceptions\PhotoFileNotFoundException.cs" />
+    <Compile Include="Models\DateTimeRangeDelay.cs" />
     <Compile Include="Models\ExternalData.cs" />
+    <Compile Include="Models\Axle.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,19 +64,27 @@
     </Compile>
     <Compile Include="Repositories\ExternalDataRepository.cs" />
     <Compile Include="Services\AnprService.cs" />
+    <Compile Include="Services\ExternalDataService.cs" />
     <Compile Include="Services\MainService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ConnectionString.config" />
+    <None Include="ConnectionString.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CatTraffic.SystemViewer.Common\CatTraffic.SystemViewer.Common.csproj">
+      <Project>{a7b3229c-c285-4647-aa15-4c7dc6996fad}</Project>
+      <Name>CatTraffic.SystemViewer.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

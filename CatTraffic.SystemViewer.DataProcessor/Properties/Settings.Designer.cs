@@ -34,5 +34,17 @@ namespace CatTraffic.SystemViewer.DataProcessor.Properties {
                 this["PhotoMaxDelay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Photos")]
+        public string PhotoDirectoryPath {
+            get {
+                return ((string)(this["PhotoDirectoryPath"]));
+            }
+            set {
+                this["PhotoDirectoryPath"] = value;
+            }
+        }
     }
 }
