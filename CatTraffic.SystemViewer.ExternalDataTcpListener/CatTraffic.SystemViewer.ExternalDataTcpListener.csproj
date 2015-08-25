@@ -71,7 +71,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CatTraffic.SystemViewer.Common\CatTraffic.SystemViewer.Common.csproj">
+      <Project>{a7b3229c-c285-4647-aa15-4c7dc6996fad}</Project>
+      <Name>CatTraffic.SystemViewer.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
