@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\NotFoundPhotoException.cs" />
     <Compile Include="Exceptions\PhotoFileNotFoundException.cs" />
+    <Compile Include="Infrastructure\CameraServiceLoader.cs" />
     <Compile Include="Models\DateTimeRangeDelay.cs" />
     <Compile Include="Models\ExternalData.cs" />
     <Compile Include="Models\Axle.cs" />

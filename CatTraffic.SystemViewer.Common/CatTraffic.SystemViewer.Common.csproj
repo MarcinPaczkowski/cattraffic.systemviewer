@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Helpers\ByteHelper.cs" />
     <Compile Include="Helpers\ConnectionStringHelper.cs" />
+    <Compile Include="Infrasturcture\CameraLibrary.cs" />
     <Compile Include="Interfaces\ICameraService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
