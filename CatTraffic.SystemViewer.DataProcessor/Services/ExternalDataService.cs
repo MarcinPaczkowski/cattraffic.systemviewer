@@ -23,11 +23,18 @@ namespace CatTraffic.SystemViewer.DataProcessor.Services
         {
             var unprocessedExternalData = GetFirstUnprocessedExternalData();
             var photoPath = FindPhotoPathByTriggerDateTime(unprocessedExternalData.Vehicles.First().DateTime);
+            unprocessedExternalData = _anprService.GetInfoFromPhoto(unprocessedExternalData, photoPath);
+            //DeleteProcessedExternalData(unprocessedExternalData.Vehicles.First())
         }
 
         private ExternalData GetFirstUnprocessedExternalData()
         {
             return _externalDataRepository.GetFirstUnprocessedData();
+        }
+
+        private void DeleteProcessedExternalData(int externalDataId)
+        {
+            _externalDataRepository.DeleteProcessedData(externalDataId);
         }
 
         private static string FindPhotoPathByTriggerDateTime(DateTime triggerDateTime)
