@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CatTraffic.SystemViewer.DataProcessor.Exceptions;
-using CatTraffic.SystemViewer.DataProcessor.Models;
-using CatTraffic.SystemViewer.DataProcessor.Repositories;
+using CatTraffic.SystemViewer.Common.Exceptions;
+using CatTraffic.SystemViewer.Common.Models;
+using CatTraffic.SystemViewer.Common.Repositories;
+using CatTraffic.SystemViewer.Common.Services;
 
 namespace CatTraffic.SystemViewer.DataProcessor.Services
 {
@@ -23,11 +24,11 @@ namespace CatTraffic.SystemViewer.DataProcessor.Services
         {
             var unprocessedExternalData = GetFirstUnprocessedExternalData();
             var photoPath = FindPhotoPathByTriggerDateTime(unprocessedExternalData.Vehicles.First().DateTime);
-            unprocessedExternalData = _anprService.GetInfoFromPhoto(unprocessedExternalData, photoPath);
-            //DeleteProcessedExternalData(unprocessedExternalData.Vehicles.First())
+            //unprocessedExternalData = _anprService.GetInfoFromPhoto(unprocessedExternalData, photoPath);
+            //DeleteProcessedExternalData(unprocessedExternalData.Vehicles.First());
         }
 
-        private ExternalData GetFirstUnprocessedExternalData()
+        private SerializeObject GetFirstUnprocessedExternalData()
         {
             return _externalDataRepository.GetFirstUnprocessedData();
         }

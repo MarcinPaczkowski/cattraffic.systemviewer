@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace CatTraffic.SystemViewer.DataProcessor.Models
+namespace CatTraffic.SystemViewer.Common.Models
 {
-    public class ExternalData
+    public class SerializeObject : ExternalData
     {
-        public ExternalData()
+        public SerializeObject()
         {
             Vehicles = new List<Vehicle>();
         }

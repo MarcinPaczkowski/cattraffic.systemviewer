@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CatTraffic.SystemViewer.Common.Infrasturcture
 {
@@ -12,7 +9,7 @@ namespace CatTraffic.SystemViewer.Common.Infrasturcture
 
         public CameraLibrary(string cameraName)
         {
-            this.CameraName = cameraName;
+            CameraName = cameraName;
         }
     }
 }

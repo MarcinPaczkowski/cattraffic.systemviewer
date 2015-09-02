@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-// ReSharper disable All
 
-namespace CatTraffic.SystemViewer.DataProcessor.Models
+namespace CatTraffic.SystemViewer.Common.Models
 {
     public class Vehicle
     {

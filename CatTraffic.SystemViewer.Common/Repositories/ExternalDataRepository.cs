@@ -1,13 +1,13 @@
 ﻿using System;
-using CatTraffic.SystemViewer.DataProcessor.Models;
+using CatTraffic.SystemViewer.Common.Models;
 
-namespace CatTraffic.SystemViewer.DataProcessor.Repositories
+namespace CatTraffic.SystemViewer.Common.Repositories
 {
     public class ExternalDataRepository
     {
-        public ExternalData GetFirstUnprocessedData()
+        public SerializeObject GetFirstUnprocessedData()
         {
-            var firstExternalData = new ExternalData();
+            var firstExternalData = new SerializeObject();
             firstExternalData.Vehicles.Add(new Vehicle
             {
                 //20130107_14004709_0_1

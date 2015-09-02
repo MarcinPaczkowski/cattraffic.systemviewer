@@ -2,6 +2,6 @@
 {
     public interface ICameraService
     {
-        void Start();
+        void ProcessFirstUnprocessedData();
     }
 }

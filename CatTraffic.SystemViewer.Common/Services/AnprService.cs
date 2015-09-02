@@ -1,20 +1,20 @@
 ﻿using System.Linq;
 using cm;
-using CatTraffic.SystemViewer.DataProcessor.Exceptions;
-using CatTraffic.SystemViewer.DataProcessor.Models;
+using CatTraffic.SystemViewer.Common.Exceptions;
+using CatTraffic.SystemViewer.Common.Models;
 using gx;
 
-namespace CatTraffic.SystemViewer.DataProcessor.Services
+namespace CatTraffic.SystemViewer.Common.Services
 {
     public class AnprService
     {
-        public ExternalData GetInfoFromPhoto(ExternalData anprInfo, string pathToPhoto)
+        public ExternalData GetInfoFromPhoto(SerializeObject anprInfo, string pathToPhoto)
         {
             anprInfo = ProcessPhoto(anprInfo, pathToPhoto);
             return anprInfo;
         }
 
-        private static ExternalData ProcessPhoto(ExternalData anprInfo, string path)
+        private static SerializeObject ProcessPhoto(SerializeObject anprInfo, string path)
         {
             var anpr = new cmAnpr("default");
             var image = new gxImage("default");

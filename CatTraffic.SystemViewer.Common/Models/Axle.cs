@@ -1,4 +1,4 @@
-﻿namespace CatTraffic.SystemViewer.DataProcessor.Models
+﻿namespace CatTraffic.SystemViewer.Common.Models
 {
     public class Axle
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace CatTraffic.SystemViewer.DataProcessor.Exceptions
+namespace CatTraffic.SystemViewer.Common.Exceptions
 {
     public class PhotoFileNotFoundException : Exception
     {
-         
+
     }
 }
