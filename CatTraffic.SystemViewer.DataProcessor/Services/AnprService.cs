@@ -1,4 +1,5 @@
-﻿using cm;
+﻿using System.Linq;
+using cm;
 using CatTraffic.SystemViewer.DataProcessor.Exceptions;
 using CatTraffic.SystemViewer.DataProcessor.Models;
 using gx;
@@ -23,29 +24,27 @@ namespace CatTraffic.SystemViewer.DataProcessor.Services
             if (!anpr.FindFirst(image))
                 throw new NotFoundPhotoException($"Nie znaleziono zdjęcia o ścieżce: {path}");
             var frame = anpr.GetFrame();
-            anprInfo.Vehicles.Add(new Vehicle
-            {
-                PlateLPR = anpr.GetText(),
-                Confidence = anpr.GetConfidence(),
-                PlateX = frame.x1,
-                PlateY = frame.y1,
-                //PlateHeight = 
-                //PlateWidth = 
-            });
 
-            while (anpr.FindNext())
-            {
-                frame = anpr.GetFrame();
-                anprInfo.Vehicles.Add(new Vehicle
-                {
-                    PlateLPR = anpr.GetText(),
-                    Confidence = anpr.GetConfidence(),
-                    PlateX = frame.x1,
-                    PlateY = frame.y1,
-                    //PlateHeight = 
-                    //PlateWidth = 
-                });
-            }
+            anprInfo.Vehicles.First().PlateLPR = anpr.GetText();
+            anprInfo.Vehicles.First().Confidence = anpr.GetConfidence();
+            anprInfo.Vehicles.First().PlateX = frame.x1;
+            anprInfo.Vehicles.First().PlateY = frame.y1;
+            //anprInfo.Vehicles.First().PlateHeight = ;
+            //anprInfo.Vehicles.First().PlateWidth = ;
+
+            //while (anpr.FindNext())
+            //{
+            //    frame = anpr.GetFrame();
+            //    anprInfo.Vehicles.Add(new Vehicle
+            //    {
+            //        PlateLPR = anpr.GetText(),
+            //        Confidence = anpr.GetConfidence(),
+            //        PlateX = frame.x1,
+            //        PlateY = frame.y1,
+            //        //PlateHeight = 
+            //        //PlateWidth = 
+            //    });
+            //}
 
             return anprInfo;
         }
