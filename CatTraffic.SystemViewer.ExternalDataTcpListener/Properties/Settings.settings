@@ -8,5 +8,8 @@
     <Setting Name="Port" Type="System.String" Scope="User">
       <Value Profile="(Default)">6666</Value>
     </Setting>
+    <Setting Name="MaxFrameSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1024</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -1,10 +1,6 @@
-﻿using CatTraffic.SystemViewer.Common.Helpers;
-using CatTraffic.SystemViewer.ExternalDataTcpListener.Models;
+﻿using CatTraffic.SystemViewer.ExternalDataTcpListener.Models;
+using CatTraffic.SystemViewer.ExternalDataTcpListener.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Factories
 {

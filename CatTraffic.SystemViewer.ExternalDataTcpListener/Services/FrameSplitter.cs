@@ -1,6 +1,6 @@
-﻿using CatTraffic.SystemViewer.Common.Helpers;
-using CatTraffic.SystemViewer.ExternalDataTcpListener.Factories;
+﻿using CatTraffic.SystemViewer.ExternalDataTcpListener.Factories;
 using CatTraffic.SystemViewer.ExternalDataTcpListener.Models;
+using CatTraffic.SystemViewer.ExternalDataTcpListener.Utils;
 using System.Linq;
 
 namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
@@ -19,6 +19,8 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
             _splittedData = new SplittedData();
             for (_currentPosition = 0; _currentPosition < buffer.Length; _currentPosition++)
             {
+                if (buffer.Length - _currentPosition < 10)
+                    break;
                 var currentByte = buffer[_currentPosition];
                 if (currentByte == 0xA5)
                     _currentPosition += ProcessTriggerFrame();

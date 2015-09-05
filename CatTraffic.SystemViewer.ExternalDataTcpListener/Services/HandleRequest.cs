@@ -29,7 +29,7 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
 
         private void WaitForRequest()
         {
-            byte[] buffer = new byte[_clientConnection.ReceiveBufferSize];
+            byte[] buffer = new byte[Properties.Settings.Default.MaxFrameSize];
             _networkStream.BeginRead(buffer, 0, buffer.Length, ReadCallback, buffer);
         }
 

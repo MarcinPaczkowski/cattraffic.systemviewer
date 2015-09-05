@@ -22,7 +22,7 @@ namespace CatTraffic.SystemViewer.TcpTestClient
             var port = Convert.ToInt32(uxPort.Text);
             var host = uxIpAddress.Text;
             var client = new System.Net.Sockets.TcpClient(host, port);
-            var data = new byte[] { 0x02, 0x68, 0x2b };
+            var data = new byte[] { 0xA5, 0x01, 1, 2, 12, 24, 06, 0, 10, 0 };
             var stream = client.GetStream();
             stream.Write(data, 0, data.Length);
             stream.Flush();

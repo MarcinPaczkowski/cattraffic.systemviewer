@@ -46,5 +46,17 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Properties {
                 this["Port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1024")]
+        public int MaxFrameSize {
+            get {
+                return ((int)(this["MaxFrameSize"]));
+            }
+            set {
+                this["MaxFrameSize"] = value;
+            }
+        }
     }
 }
