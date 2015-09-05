@@ -3,9 +3,9 @@ using CatTraffic.SystemViewer.Common.Models;
 
 namespace CatTraffic.SystemViewer.Common.Repositories
 {
-    public class ExternalDataRepository
+    internal class ExternalDataRepository
     {
-        public SerializeObject GetFirstUnprocessedData()
+        internal SerializeObject GetFirstUnprocessedData()
         {
             var firstExternalData = new SerializeObject();
             firstExternalData.Vehicles.Add(new Vehicle
@@ -16,7 +16,7 @@ namespace CatTraffic.SystemViewer.Common.Repositories
             return firstExternalData;
         }
 
-        public void DeleteProcessedData(int externalDataId)
+        internal void DeleteProcessedData(int externalDataId)
         {
             // todo delete 
         }

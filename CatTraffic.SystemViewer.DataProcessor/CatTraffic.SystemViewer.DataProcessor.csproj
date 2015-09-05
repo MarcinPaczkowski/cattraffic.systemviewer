@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cat_traffic_ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="cmanprdotnet8">
       <HintPath>..\references\cmanprdotnet8.dll</HintPath>
@@ -49,13 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\NotFoundPhotoException.cs" />
-    <Compile Include="Exceptions\PhotoFileNotFoundException.cs" />
     <Compile Include="Infrastructure\CameraServiceLoader.cs" />
-    <Compile Include="Models\DateTimeRangeDelay.cs" />
-    <Compile Include="Models\ExternalData.cs" />
-    <Compile Include="Models\Axle.cs" />
-    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -63,10 +60,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\ExternalDataRepository.cs" />
-    <Compile Include="Services\AnprService.cs" />
-    <Compile Include="Services\ExternalDataService.cs" />
+    <Compile Include="Services\DirectoryService.cs" />
     <Compile Include="Services\MainService.cs" />
+    <Compile Include="Services\SerializeService.cs" />
+    <Compile Include="Services\WinZipService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -85,6 +82,12 @@
       <Project>{a7b3229c-c285-4647-aa15-4c7dc6996fad}</Project>
       <Name>CatTraffic.SystemViewer.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cat_traffic_ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

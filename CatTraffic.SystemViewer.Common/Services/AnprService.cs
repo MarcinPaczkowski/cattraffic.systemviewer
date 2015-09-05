@@ -8,21 +8,21 @@ namespace CatTraffic.SystemViewer.Common.Services
 {
     public class AnprService
     {
-        public ExternalData GetInfoFromPhoto(SerializeObject anprInfo, string pathToPhoto)
+        public SerializeObject GetInfoFromPhoto(SerializeObject anprInfo)
         {
-            anprInfo = ProcessPhoto(anprInfo, pathToPhoto);
+            anprInfo = ProcessPhoto(anprInfo);
             return anprInfo;
         }
 
-        private static SerializeObject ProcessPhoto(SerializeObject anprInfo, string path)
+        private static SerializeObject ProcessPhoto(SerializeObject anprInfo)
         {
             var anpr = new cmAnpr("default");
             var image = new gxImage("default");
 
-            image.Load(path);
+            image.Load(anprInfo.PhotoPath);
 
             if (!anpr.FindFirst(image))
-                throw new NotFoundPhotoException($"Nie znaleziono zdjęcia o ścieżce: {path}");
+                throw new NotFoundPhotoException($"Nie znaleziono zdjęcia o ścieżce: {anprInfo.PhotoPath}");
             var frame = anpr.GetFrame();
 
             anprInfo.Vehicles.First().PlateLPR = anpr.GetText();
