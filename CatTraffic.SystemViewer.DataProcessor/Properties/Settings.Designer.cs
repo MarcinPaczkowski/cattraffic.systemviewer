@@ -46,5 +46,17 @@ namespace CatTraffic.SystemViewer.DataProcessor.Properties {
                 this["PhotoDirectoryPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Destination")]
+        public string DestinationPath {
+            get {
+                return ((string)(this["DestinationPath"]));
+            }
+            set {
+                this["DestinationPath"] = value;
+            }
+        }
     }
 }
