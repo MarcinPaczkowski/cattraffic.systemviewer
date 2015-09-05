@@ -50,8 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="FrameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CatTraffic.SystemViewer.ExternalDataTcpListener\CatTraffic.SystemViewer.ExternalDataTcpListener.csproj">
+      <Project>{9904fbf3-b991-43a1-a943-8db4af8f7ec5}</Project>
+      <Name>CatTraffic.SystemViewer.ExternalDataTcpListener</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
 {
-    class FrameSplitter
+    public class FrameSplitter
     {
         int _currentPosition;
         byte[] _buffer;
@@ -13,7 +13,7 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
         const int TRIGGER_DATA_LENGTH = 10;
         
 
-        internal SplittedData SplitAndProcess(byte[] buffer)
+        public SplittedData SplitAndProcess(byte[] buffer)
         {
             _buffer = buffer;
             _splittedData = new SplittedData();
