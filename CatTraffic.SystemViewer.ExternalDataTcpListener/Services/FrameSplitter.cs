@@ -40,11 +40,11 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
         {
             var lengthLsb = _buffer[_currentPosition + 2];
             var lengthMsb = _buffer[_currentPosition + 3];
-            var frameLength = ByteHelper.CreateIntFromBytes(lengthLsb, lengthMsb) + 5;
+            var frameLength = ByteHelper.CreateIntFromBytes(lengthLsb, lengthMsb) + 7;
             var weigthBytes = _buffer.Skip(_currentPosition).Take(frameLength).ToArray();
             var weigthData = WeightDataFactory.CreateData(weigthBytes);
             _splittedData.WeightData.Add(weigthData);
-            return frameLength;
+            return frameLength -1;
         }
 
         private int ProcessTriggerFrame()
@@ -52,7 +52,7 @@ namespace CatTraffic.SystemViewer.ExternalDataTcpListener.Services
             var triggerbytes = _buffer.Skip(_currentPosition).Take(TRIGGER_DATA_LENGTH).ToArray();
             var triggerData = TriggerDataFactory.CreateData(triggerbytes);
             _splittedData.TriggerData.Add(triggerData);
-            return TRIGGER_DATA_LENGTH;
+            return TRIGGER_DATA_LENGTH -1;
         }
     }
 }
