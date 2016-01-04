@@ -64,6 +64,7 @@
     <Compile Include="Services\HandleRequest.cs" />
     <Compile Include="Services\TcpAsyncListener.cs" />
     <Compile Include="Utils\ByteHelper.cs" />
+    <Compile Include="Utils\ConnectionStringProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

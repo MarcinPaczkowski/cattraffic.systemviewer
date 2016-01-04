@@ -12,6 +12,8 @@ namespace CatTraffic.SystemViewer.Test
         {
             var frame = new List<byte>();
             frame.AddRange(GetWeightFrame());
+            frame.AddRange(GetTriggerFrame());
+            frame.AddRange(GetWeightFrame());
             var splitter = new FrameSplitter();
             var result = splitter.SplitAndProcess(frame.ToArray());
         }
